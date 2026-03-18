@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main() { 
-    int número;
+    float número;
 
     printf ("Digite um número: ");
     scanf ("%i", &número);
