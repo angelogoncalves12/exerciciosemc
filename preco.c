@@ -4,46 +4,50 @@ int main() {
     float kWh, preco, custo;
     char inst;
     
-    preco == 0;
-    printf ("Qual a quantidade kWh consumida? \n");
-    scanf ("%.2f", &kWh);
+    preco = 0;
     
     printf ("Instalação: Residencial, Industrial ou Comercial? (R/I/C): \n");
     scanf (" %c", &inst);
     
-    if (inst == 'R'){
+    printf ("Qual a quantidade kWh consumida? \n");
+    scanf ("%f", &kWh);
+  
+    if (inst == 'R' || inst == 'r'){
         if (kWh <= 500){
-            preco = 0.40;
-            printf ("O preço é igual a %f", preco \n");
+            preco += 0.40;
+             printf ("O preço é igual a %.2f \n", preco);
             }
         else {
-            preco = 0.65;
-            printf ("O preço é igual a %f", preco \n");
+            preco += 0.65;
+             printf ("O preço é igual a %.2f \n", preco);
         }
-
-    else if (inst == 'C') {
-        if (kWh <= 5000){
-            preco = 0.55;
-            printf ("O preço é igual a %f", preco \n");
+}
+    else if (inst == 'C' || inst == 'c') {
+        if (kWh <= 1000){
+            preco += 0.55;
+            printf ("O preço é igual a %.2f \n", preco);
             }
         else {
-            preco == 0.60;
-            printf ("O preço é igual a %f", preco \n");
+            preco += 0.60;
+            printf ("O preço é igual a %.2f \n", preco);
             }
     }
-    else if (inst == 'I') {
-        if (kWh <= 1000){
-            preco == 0.40;
-            printf ("O %f é igual a R$ 0.40", preco \n");
+    else if (inst == 'I' || inst == 'i') {
+        if (kWh <= 5000){
+            preco += 0.55;
+             printf ("O preço é igual a %.2f \n", preco);
             }
         else {
-            preco == 0.65;
-            printf ("O %f é igual a R$ 0.65", preco \n");
+            preco += 0.60;
+             printf ("O preço é igual a %.2f \n", preco);
             }
     }
     else {
         printf ("Valor inválido, retorne a operação.\n");
     }
+    
+    custo = preco * kWh;
+    printf ("O custo total é %.2f", custo);
 
     return 0;
 }
